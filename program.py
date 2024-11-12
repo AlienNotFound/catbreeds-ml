@@ -77,7 +77,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.MaxPooling2D(),
     tf.keras.layers.Flatten(),
     tf.keras.layers.Dropout(0.3),
-    tf.keras.layers.Dense(128, activation = 'relu'),
+    tf.keras.layers.Dense(256, activation = 'relu'),
     tf.keras.layers.Dropout(0.2),
     tf.keras.layers.Dense(num_classes)
 ])
@@ -98,6 +98,6 @@ model.fit(
     callbacks = [early_stopping]
 )
 
-model.save('model_of_cats2.keras')
+model.save('model_of_cats.keras')
 with open('class_names.json', 'w') as f:
     json.dump(class_names, f)

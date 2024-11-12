@@ -8,7 +8,7 @@ import streamlit as st
 from PIL import Image
 
 ### Streamlit App ###
-model = tf.keras.models.load_model('model_of_cats2.keras')
+model = tf.keras.models.load_model('model_of_cats.keras')
 with open('class_names.json', 'r') as f:
     class_names = json.load(f)
 # class_names = model.class_names if hasattr(model, "class_names") else []

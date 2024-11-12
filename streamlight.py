@@ -3,14 +3,15 @@ import os
 import cv2
 import numpy as np
 import tensorflow as tf
-
+import json
 import streamlit as st
 from PIL import Image
 
-import tempfile
 ### Streamlit App ###
-model = tf.keras.models.load_model('model_of_cats.keras')
-class_names = model.class_names if hasattr(model, "class_names") else []
+model = tf.keras.models.load_model('model_of_cats2.keras')
+with open('class_names.json', 'r') as f:
+    class_names = json.load(f)
+# class_names = model.class_names if hasattr(model, "class_names") else []
 
 ## Classify image
 def classify_digit(model, image):

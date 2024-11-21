@@ -1,2 +1,5 @@
 /env/
 /__pycache__/
+
+model_of_cats.keras
+model_of_cats_short.keras

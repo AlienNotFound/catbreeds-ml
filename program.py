@@ -45,8 +45,8 @@ image_batch, labels_batch = next(iter(normalized_ds))
 first_image = image_batch[0]
 print(np.min(first_image), np.max(first_image))
 
-train_ds = train_ds.prefetch(buffer_size = AUTOTUNE)#.cache()
-val_ds = val_ds.prefetch(buffer_size = AUTOTUNE)#.cache()
+train_ds = train_ds.prefetch(buffer_size = AUTOTUNE)
+val_ds = val_ds.prefetch(buffer_size = AUTOTUNE)
 
 ### Model training
 
@@ -106,5 +106,3 @@ model.fit(
 model.save('model_of_cats_short.keras')
 with open('class_names.json', 'w') as f:
     json.dump(class_names, f)
-
-# print("Finished training.") # Had issues with the model ending after the first epoch run, without feedback. Printing this for verification that it reaches end of code.
